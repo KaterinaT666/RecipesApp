@@ -2,7 +2,10 @@ package me.tokan.recipesapp.controllers;
 
 import me.tokan.recipesapp.model.Ingredient;
 import me.tokan.recipesapp.service.IngredientService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/ingredient")
@@ -20,7 +23,23 @@ public class IngredientController {
 	}
 
 	@GetMapping("/{id}")
-	public Ingredient get(@PathVariable long id){
-		return ingredientService.get(id);
+	public ResponseEntity<Ingredient> get(@PathVariable long id){
+		return ResponseEntity.of(ingredientService.get(id));
+	}
+
+	@PutMapping ("/{id}")
+	public ResponseEntity<Ingredient> update(@PathVariable long id,
+											 @RequestBody Ingredient ingredient){
+		return ResponseEntity.of(ingredientService.update(id, ingredient));
+	}
+
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Ingredient> delete(@PathVariable long id){
+		return ResponseEntity.of(ingredientService.delete(id));
+	}
+
+	@GetMapping
+	public Map<Long, Ingredient> getAll(){
+		return ingredientService.getAll();
 	}
 }
