@@ -1,4 +1,4 @@
-package me.tokan.recipesapp;
+package me.tokan.recipesapp.model;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RecipesAppApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(RecipesAppApplication.class, args);
 	}
 
