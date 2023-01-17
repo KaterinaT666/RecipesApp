@@ -1,6 +1,14 @@
 package me.tokan.recipesapp.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class Recipe {
 
@@ -9,48 +17,5 @@ public class Recipe {
 	private List<Ingredient> ingredients;
 	private List<String> steps;
 
-	public Recipe() {
-	}
 
-	public Recipe(int cookingTime,
-				  String title,
-				  List<Ingredient> ingredients,
-				  List<String> steps) {
-		this.cookingTime = cookingTime;
-		this.title = title;
-		this.ingredients = ingredients;
-		this.steps = steps;
-	}
-
-	public int getCookingTime() {
-		return cookingTime;
-	}
-
-	public void setCookingTime(int cookingTime) {
-		this.cookingTime = cookingTime;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public List<Ingredient> getIngredients() {
-		return ingredients;
-	}
-
-	public void setIngredients(List<Ingredient> ingredients) {
-		this.ingredients = ingredients;
-	}
-
-	public List<String> getSteps() {
-		return steps;
-	}
-
-	public void setSteps(List<String> steps) {
-		this.steps = steps;
-	}
 }
